@@ -7,6 +7,9 @@ backbone = efficient_face()
 print(backbone)
 
 class NREModel(torch.nn.Module):
+    """
+    Wrapper that makes successive calls to backbone and NRE modules
+    """
     def __init__(self, backbone=efficient_face(), n_classes=7, n_domains=1, in_features=15):
         super().__init__()
         self.backbone = backbone
